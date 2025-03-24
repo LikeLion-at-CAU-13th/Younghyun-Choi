@@ -1,0 +1,134 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 배경과 기본 폰트 설정 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: #333;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #333;
+    color: yellowgreen;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.title-image img {
+    width: 100%;                                                      
+    height: 400px;
+    object-fit: cover;
+}
+
+nav {
+    background-color: goldenrod;
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 각 섹션 스타일 */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* 기술 스택 영역 */
+
+.skill-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+/* 프로젝트 스타일 */
+.project {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.project h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* 반응형 웹디자인 (예시: 모바일 친화적인 디자인) */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .skill-list {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 30px 10px;
+    }
+}

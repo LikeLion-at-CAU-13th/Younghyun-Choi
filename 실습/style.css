@@ -1,0 +1,23 @@
+img {
+    width: 300px;
+    border-radius: 50px;
+    margin-left: 40px;
+}
+
+header {
+    background-color:azure;
+}
+
+nav {
+    background-color:rgb(240, 212, 30);
+}
+
+main {
+    background-color:cornflowerblue;
+}
+
+.about {
+    background-color:coral;
+}
+
+body { font-family: "맑은 고딕"; }
