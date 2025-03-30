@@ -71,6 +71,21 @@ button {
   border: black solid 4px;
 }
 
+/* 목숨 부분 */
+
+#heart {
+  margin: 10px;
+  font-size: 45px;
+  gap: 5px;
+  color: red;
+  align-items: start;
+}
+
+.fa-heart {
+  border: none !important;
+  border-radius: 50% !important;
+}
+
 /* section1(점수판) */
 .score-section {
   height: 15%;

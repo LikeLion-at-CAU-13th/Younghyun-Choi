@@ -24,6 +24,9 @@ const darkModeBtn = document.getElementById("dark-mode-button"); // 다크 모�
 let myScore = 0; // 실제 출력될 내 점수
 let computerScore = 0; // 실제 출력될 컴퓨터의 점수
 let streak = 0; // 연승 출력
+let life = 10;
+
+updateMyLife();
 
 // 2. 이벤트 설정
 rockBtn.addEventListener("click", displayMyChoice); // 바위 버튼을 누르면, displayMyChoice를 호출
@@ -91,10 +94,19 @@ function start(myChoice) {
     computerScore++; // 컴퓨터 점수 +1
     result.innerText = "lose";
     streak = 0;
+    life--;
+  }
+
+  if (life === 0) {
+    alert("Game Over");
+    rockBtn.disabled = true;
+    scissorsBtn.disabled = true;
+    paperBtn.disabled = true;
   }
 
   winStreak();
   updateScore();
+  updateMyLife();
 }
 
 // 7. 점수를 업데이트하는 함수
@@ -107,6 +119,12 @@ function updateScore() {
 // 8. 리셋하는 함수
 
 function resetGame() {
+  life = 10;
+  updateMyLife();
+  rockBtn.disabled = false;
+  scissorsBtn.disabled = false;
+  paperBtn.disabled = false;
+
   myScore = 0;
   computerScore = 0;
 
@@ -119,6 +137,7 @@ function resetGame() {
   result.innerText = "";
 
   streak = 0;
+  life = 10;
 
   displayMyScore.style.display = "none";
   displayComputerScore.style.display = "none";
@@ -136,6 +155,8 @@ function toggleDarkMode() {
   else darkModeBtn.innerText = "night";
 }
 
+// 10. 연승 출력 함수
+
 function winStreak() {
   if (streak >= 2) {
     displayWinStreak.style.display = "inline";
@@ -145,4 +166,18 @@ function winStreak() {
     displayWinStreak.style.display = "none";
     displayStreakMsg.style.display = "none";
   }
+}
+
+// 11. 목숨 출력 함수
+
+function updateMyLife() {
+  const heart = document.getElementById("heart");
+  heart.innerHTML = "";
+
+  for (let i = 0; i < life; i++) {
+    heart.innerHTML += '<i class="fa-solid fa-heart"></i>';
+  }
+
+  for (let i = 0; i < 10 - life; i++)
+    heart.innerHTML += '<i class="fa-regular fa-heart"></i>';
 }
