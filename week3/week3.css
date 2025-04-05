@@ -1,0 +1,575 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+/* --- 헤더 영역 --- */
+header {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(assets/CHOIYOUNGHYUN.JPG) center no-repeat;
+  background-size: cover;
+  padding: 10px 8%;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh; /* 그라데이션이 적용되는 높이 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #111 100%);
+  pointer-events: none; /* 클릭 이벤트 방지 */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* 내비게이션 링크 */
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 70px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff0a16;
+}
+
+/* 우측 버튼 */
+
+nav div {
+  display: flex;
+  gap: 20px;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  margin-left: -20px;
+}
+
+/* 우측 버튼 - 언어선택(lang) 버튼 */
+.lang {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 10px 20px;
+}
+.lang:hover {
+  background-color: white;
+  color: black;
+}
+.lang i:nth-child(1) {
+  margin-right: 8px;
+}
+.lang i:nth-child(2) {
+  margin-left: 5px;
+}
+
+/* 우측 버튼 - 로그인(login) 버튼 */
+.login {
+  background-color: #e50914;
+  color: white;
+  border: 5px transparent;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 10px 20px;
+}
+.login:hover {
+  background-color: white;
+  color: rgb(65, 49, 81);
+}
+
+/* 헤더 본문(내비게이션1 [홈]) */
+.header-content {
+  display: flex; /* Flexbox(플렉스박스) 활성화 */
+  flex-direction: column;
+  align-items: center; /* 세로 중앙 */
+  justify-content: center; /* 가로 중앙 */
+  text-align: center;
+  height: 80vh;
+}
+
+/* 메인 타이틀(안녕하세요,) */
+.main-title {
+  margin-bottom: 50px;
+  font-size: 60px;
+}
+
+/* 서브 타이틀(멋쟁이사자처럼 13기 프론트엔드 최영현입니다.) */
+.sub-title {
+  margin-bottom: 40px;
+  font-size: 25px;
+}
+
+/* 더 알아보기 버튼 */
+.info-btn {
+  background-color: #e50914;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: all 0.3s ease;
+}
+.info-btn a {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+.info-btn:hover {
+  background-color: #ff0a16;
+  transform: scale(1.25);
+}
+
+/* 섹션2 [소개] */
+.about {
+  margin-top: 60px;
+  margin-bottom: 25px;
+  font-size: 60px;
+}
+
+/* 섹션2 [소개] - 메인 제목 */
+.about h1 {
+  font-size: 70px;
+  color: white;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  text-align: center;
+}
+
+/* 섹션2 [소개] - 본문 */
+.about-container {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 섹션2 [소개] - 좌측 사진 */
+.about-photo {
+  width: 450px;
+  height: 550px;
+  border-radius: 0%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+.about-photo:hover {
+  transform: scale(1.2);
+}
+
+/* 섹션2 [소개] - 우측 소개란 */
+.about-content {
+  display: flex;
+  font-size: 25px;
+  margin-left: 70px;
+}
+
+/* 섹션2 [소개] - 우측 소개란 - 제목 */
+.about-content-name {
+  display: flex;
+  flex-direction: column;
+  font-weight: bolder;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+/* 섹션2 [소개] - 우측 소개란 - 설명 */
+.about-content-discription {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+/* 섹션3 [아카이브] */
+
+.archive h1 {
+  font-size: 70px;
+  color: white;
+  margin-top: 200px;
+  margin-bottom: 200px;
+  text-align: center;
+}
+
+.archive-img-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.archive-img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.archive-img:hover {
+  transform: scale(1.1);
+}
+
+/* 섹션4 [취미] */
+
+.hobby h1 {
+  font-size: 70px;
+  color: white;
+  margin-top: 200px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+/* 섹션4 [취미] - 내용 */
+
+.hobby-container {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 150px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+/* 섹션4 [취미] - 섹션 */
+
+.hobby-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 100px;
+}
+
+/* 섹션4 [취미] - 섹션 제목 */
+
+.hobby-section-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* 섹션4 [취미] - 섹션 내용 */
+
+.hobby-section-content {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+/* 섹션4 [취미] - 이미지 */
+
+.hobby-section img {
+  background-color: white;
+  width: 360px;
+  height: 220px;
+  margin-right: 5px;
+  transition: all 0.5s;
+}
+
+/* 섹션4 [취미] - 이미지 마우스 올릴 시 */
+
+.hobby-section img:hover {
+  transform: scale(1.4);
+}
+
+/* 섹션4 [취미] - 모달 창 */
+
+.modal {
+  display: none;
+  position: fixed; /* 위치 고정. */
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%; /* 가로 길이 최대 */
+  height: 100%; /* 세로 길이 최대 */
+  overflow: auto; /* 만약 필요할 경우 스크롤 허용 */
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: rgb(0, 0, 0); /* 백그라운드 색 */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal_content {
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: linear-gradient(180deg, #141414, black);
+  line-height: 10px;
+  text-align: center;
+  background-color: #fefefe;
+  border-radius: 5px;
+  width: 60%;
+  max-width: 900px;
+  height: auto;
+  margin: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.close {
+  display: flex;
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50px;
+  background-color: #141414;
+  color: #fff;
+  float: right;
+  font-size: 2rem;
+  font-weight: lighter;
+  text-align: center;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 섹션4 [취미] - 모달 창의 상단바 (주의:모달의 제목이 아님)*/
+
+.modal_title {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  box-shadow: inset 0px -130px 80px #141414;
+}
+
+/* 섹션4 [취미] - 모달 창의 설명 부분 */
+
+.modal_desc {
+  margin: 0;
+  background-color: #161819;
+  color: white;
+  height: 200px;
+  text-align: left;
+}
+
+/* 모달 이미지 스타일 추가 */
+.modal_image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* 섹션4 [취미] - 모달 설명 제목 */
+
+.desc_name {
+  font-size: 2rem;
+  font-weight: 700;
+  height: 20px;
+  margin-left: 20px;
+}
+
+/* 섹션4 [취미] - 모달 설명 내용 */
+
+.desc_inf {
+  font-size: 1rem;
+  font-weight: 400;
+  height: auto;
+  margin: 20px;
+  line-height: 30px;
+}
+
+/* 섹션5 [자주하는 질문] */
+
+.faq h1 {
+  font-size: 70px;
+  color: white;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+/* 섹션5 [자주하는 질문] - 아코디언 */
+
+.faq .accordion {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+/* 섹션5 [자주하는 질문] - 아코디언 요소 */
+
+.accordion li {
+  list-style: none;
+  width: 100%;
+  padding: 5px;
+}
+
+/* 섹션5 [자주하는 질문] - 아코디언 블럭 디자인 */
+
+.accordion li label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 25px;
+  font-weight: 5 00;
+  background: #303030;
+  margin-bottom: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* 섹션5 [자주하는 질문] - 아코디언 블럭 디자인 - 이후 */
+
+.accordion li label::after {
+  content: "\2b";
+  font-size: 40px;
+  position: absolute;
+  right: 20px;
+  transition: 0.5s;
+}
+
+.accordion input[type="radio"] {
+  display: none;
+}
+
+.accordion .content {
+  background: #3b3b3b;
+  font-size: 22px;
+  line-height: 1.6;
+  text-align: left;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.accordion input[type="radio"]:checked + label + .content {
+  max-height: 600px;
+  padding: 30px 20px;
+}
+
+.accordion input[type="radio"]:checked + label::after {
+  transform: rotate(-135deg);
+}
+
+.send-question {
+  width: 100%;
+  max-width: 1500px;
+  margin: 20px auto;
+  padding: 20px 10%;
+  text-align: center;
+}
+
+.send-question p {
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.question-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.question-container input {
+  flex: 1; /* 입력창이 가능한 넓게 확장 */
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-right: none;
+  background-color: white;
+}
+
+.question-container button {
+  padding: 15px 30px;
+  font-size: 16px;
+  color: white;
+  background-color: red;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.question-container button:hover {
+  background-color: darkred;
+}
+
+/* 하단 푸터 영역 */
+
+.footer {
+  padding: 60px 10%;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 100px;
+  margin-left: 200px;
+}
+
+.footer-content a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.hyperlink {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.hyperlink li:not(:last-child) {
+  padding-right: 20px;
+  border-right: 1px solid #eee;
+}
+
+.socials {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.socials a {
+  font-size: 60px;
+}
