@@ -6,6 +6,8 @@ class TodoController {
   constructor(todoText) {
     this.newTodo = new Todo(todoText); // 새 객체 생성
 
+    this.todoList = document.getElementById("to-do-list");
+
     this.delBtnNode = this.newTodo.getDelBtn();
     this.comBtnNode = this.newTodo.getCompleteBtn();
     this.innerNode = this.newTodo.getInnerText();
@@ -19,16 +21,14 @@ class TodoController {
   }
 
   addTodo() {
-    const todoList = document.getElementById("to-do-list");
-    todoList.appendChild(this.newTodo.addRow());
+    this.todoList.appendChild(this.newTodo.addRow());
 
     const input = document.querySelector("input");
     input.value = "";
   }
 
   delTodo() {
-    const todoList = document.getElementById("to-do-list");
-    todoList.removeChild(this.newTodo.getRow());
+    this.todoList.removeChild(this.newTodo.getRow());
   }
 
   doneTodo() {
