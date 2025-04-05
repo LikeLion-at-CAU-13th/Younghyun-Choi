@@ -1,3 +1,5 @@
+<img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=header" />
+
 # 최영현 Younghyun Choi
 > 안녕하세요, 멋쟁이사자처럼 13기 프론트엔드 아기사자 최영현입니다.
 ## 😃 본인 소개
@@ -9,5 +11,21 @@
 - **타로**도 보니까 고민 있으면 오세요. (~~대신 인당 +5만원 ㅎㅎ~~)
 
 ---
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Benzity)](https://github.com/anuraghazra/github-readme-stats)
+
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Benzity)](https://github.com/anuraghazra/github-readme-stats)
+
+---
+## 📚 과제 설명
+
+4주차 과제
+<br>
+![Velog's GitHub stats](https://velog-readme-stats.vercel.app/api?name=aintaboutblues)
+
+
+
+---
 <img src="IMG_8629.JPG" width="40%" height="30%"></img>
 ---
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=BDBDC8&height=150&section=footer" />
