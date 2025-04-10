@@ -1,4 +1,4 @@
-const baseURL = "http://apis.data.go.kr/B551011/PhotoGalleryService1";
+const baseURL = "https://apis.data.go.kr/B551011/PhotoGalleryService1";
 
 const option = {
   serviceKey:
