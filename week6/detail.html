@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>사진 상세 정보</title>
+    <link rel="stylesheet" href="global.css" />
+  </head>
+  <body>
+    <h2>📷 상세 정보 페이지</h2>
+    <div id="detail"></div>
+
+    <script>
+      // URL에서 쿼리 파라미터 추출
+      const params = new URLSearchParams(location.search);
+
+      // 날짜 포맷 변경 함수
+      function formatDate(dateString) {
+        const year = dateString.slice(2, 4);
+        const month = dateString.slice(4, 6);
+        const day = dateString.slice(6, 8);
+        return `${year}/${month}/${day}`;
+      }
+
+      // 요소 만들기
+      const detail = document.getElementById("detail");
+      detail.innerHTML = `
+        <img src="${params.get(
+          "image"
+        )}" style="width: 400px; max-width: 90%;" />
+        <p>📌 제목: ${params.get("title")}</p>
+        <p>📍 장소: ${params.get("location")}</p>
+        <p>📅 날짜: ${formatDate(params.get("date"))}</p>
+        <p>📸 촬영자: ${params.get("photographer") || "정보 없음"}</p>
+        <p>🏷️ 키워드: ${params.get("keyword") || "없음"}</p>
+        <button onclick="history.back()">뒤로가기</button>
+      `;
+    </script>
+  </body>
+</html>
