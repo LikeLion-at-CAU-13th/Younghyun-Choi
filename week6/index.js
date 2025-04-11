@@ -50,7 +50,7 @@ async function getData() {
         image: data.galWebImageUrl,
       });
 
-      window.location.href = `detail.html?${params.toString()}`;
+      window.open(`detail.html?${params.toString()}`, "_blank");
     });
 
     list.appendChild(image); // <img> 태그
