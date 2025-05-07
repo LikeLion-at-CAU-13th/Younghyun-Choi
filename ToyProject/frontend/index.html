@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>방명록</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="https://fontmeme.com/ko/netflix-type/"></a>
+        <img
+          class="title-image"
+          src="https://fontmeme.com/permalink/250426/3100e458ded8cfc7ff089ff439235f29.png"
+          alt="netflix-type"
+          border="0"
+        />
+      </a>
+      <button class="button-red title-button" onclick="openModal()">
+        작성하기
+      </button>
+    </header>
+
+    <h1>환영합니다. 방명록을 작성해주세요!</h1>
+
+    <main class="card-container" id="card-container">
+      <!-- JS로 카드 추가됨 -->
+    </main>
+
+    <div id="modal" class="modal hidden">
+      <div class="modal-content" style="position: relative">
+        <button class="modal-close-button" onclick="closeModal()">x</button>
+        <h2>방명록 작성</h2>
+        <input type="text" id="title" placeholder="제목" />
+        <input type="text" id="writer" placeholder="작성자" />
+        <textarea id="content" placeholder="내용"></textarea>
+        <input type="password" id="password" placeholder="비밀번호" />
+        <div class="modal-submit-button-wrapper">
+          <button class="button-red" onclick="submitPost()">작성</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="delete-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>삭제하기</h2>
+        <p>비밀번호를 입력하세요.</p>
+        <input type="password" id="delete-password" placeholder="비밀번호" />
+        <button class="button-red" onclick="confirmDelete()">삭제</button>
+        <button class="delete-modal-close-button" onclick="closeDeleteModal()">x</button>
+      </div>
+    </div>
+
+    <footer>
+      <footer class="footer">
+        <p>© 2025 멋쟁이사자처럼 13기 Toy Project | All rights reserved.</p>
+        <p>Frontendㅣ최영현</p>
+        <p>Backendㅣ김윤형</p>
+      </footer>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
