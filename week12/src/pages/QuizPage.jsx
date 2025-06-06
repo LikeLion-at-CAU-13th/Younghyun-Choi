@@ -84,17 +84,6 @@ const QuizPage = () => {
                         onChange={() => saveAnswers(q.id, answer)}
                       />
                       {answer}
-
-                      {answerObject && answerObject.correct !== null && (
-                        <span>
-                          {answerObject.correct &&
-                          answerObject.answer === answer
-                            ? "✅"
-                            : answerObject.answer === answer
-                            ? "❌"
-                            : ""}
-                        </span>
-                      )}
                     </label>
                   </li>
                 ))}
