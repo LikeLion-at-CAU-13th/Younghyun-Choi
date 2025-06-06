@@ -63,34 +63,32 @@ const QuizPage = () => {
       <Title onClick={goHome}>🏠</Title>
       <Title>Quiz Page 🦁</Title>
       <ul>
-        {questions.map((q) => {
-          const answerObject = userAnswers.find((a) => a.id === q.id);
-          return (
-            <div key={q.id}>
-              <Question>
-                Q{q.id + 1}. {q.question}
-              </Question>
-              <ul>
-                {q.answers.map((answer, idx) => (
-                  <li key={idx}>
-                    <label>
-                      <input
-                        type="radio"
-                        name={`question-${q.id}`}
-                        value={answer}
-                        checked={
-                          answerObject ? answerObject.answer === answer : false
-                        }
-                        onChange={() => saveAnswers(q.id, answer)}
-                      />
-                      {answer}
-                    </label>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          );
-        })}
+        {questions.map((q) => (
+          <div key={q.id}>
+            <Question>
+              Q{q.id + 1}. {q.question}
+            </Question>
+            <ul>
+              {q.answers.map((answer, idx) => (
+                <li key={idx}>
+                  <label>
+                    <input
+                      type="radio"
+                      name={`question-${q.id}`}
+                      value={answer}
+                      checked={
+                        userAnswers.find((a) => a.id === q.id)?.answer ===
+                        answer
+                      }
+                      onChange={() => saveAnswers(q.id, answer)}
+                    />
+                    {answer}
+                  </label>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </ul>
       <SubmitButton onClick={submitAnswers}>제출</SubmitButton>
     </QuizDom>
