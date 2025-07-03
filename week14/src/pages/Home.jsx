@@ -135,7 +135,7 @@ const Home = () => {
       .catch(() => {
         localStorage.clear();
       });
-  }, []);
+  }, [navigate]);
 
   const onClick = async () => {
     try {
